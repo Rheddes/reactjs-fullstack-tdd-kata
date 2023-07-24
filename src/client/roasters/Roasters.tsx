@@ -1,7 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
-const Roasters = ({ fetchRoasters }) => {
-	const [roasters, setRoasters] = useState();
+interface Roaster {
+	title: string;
+}
+
+interface RoasterProps {
+	fetchRoasters: () => Promise<{ roasters: Roaster[] }>;
+}
+
+export function RoasterList({ roasters }: { roasters: Roaster[] }) {
+	return (
+		<>
+			{roasters.map((roaster) => (
+				<span>{roaster.title}</span>
+			))}
+		</>
+	);
+}
+
+export default function Roasters({ fetchRoasters }: RoasterProps) {
+	const [currentRoasters, setRoasters] = useState<Roaster[]>([]);
 
 	useEffect(() => {
 		(async () => {
@@ -10,13 +28,5 @@ const Roasters = ({ fetchRoasters }) => {
 		})();
 	}, []);
 
-	return (<RoasterList roasters={roasters}>{roasters}</RoasterList>);
-};
-
-export function RoasterList({ roasters }) {
-	return (
-		<>{roasters && roasters.length > 0 && <span>{roasters}</span>}</>
-	);
+	return <RoasterList roasters={currentRoasters} />;
 }
-
-export default Roasters;

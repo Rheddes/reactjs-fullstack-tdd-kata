@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import { sendQuery } from '../test.helpers';
+import { describe, it, expect } from 'vitest';
+import { sendQuery } from '../utils/sendQuery';
 
 describe('Roasters', () => {
 	it('returns hello world for roasters', async () => {

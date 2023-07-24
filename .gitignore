@@ -20,3 +20,4 @@ package-lock.json
 delete-artifacts.sh
 .env
 .idea
+test-result.xml

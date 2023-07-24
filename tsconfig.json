@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "outDir": "lib",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types", "types"],
+    "types": ["vitest/globals", "chai", "node"],
+    "jsx": "react-jsx"
+  },
+  "exclude": ["node_modules"]
+}
