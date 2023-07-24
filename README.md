@@ -150,7 +150,7 @@ While doing this kata, keep these in mind:
 - 
 
 ## 📜 COFFEE ROASTER FEATURES
-![beans](src/assets/coffee-beans.gif)
+![beans](assets/coffee-beans.gif)
 
 ## Implement the following features with TDD:
 
