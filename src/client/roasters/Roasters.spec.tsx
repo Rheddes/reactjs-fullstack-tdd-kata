@@ -11,7 +11,9 @@ describe('Roasters', () => {
   });
 
   it('shows text "Hello World"', async () => {
-    const fetchRoasters = async () => ({ roasters: [{ title: 'Hello World' }] });
+    const fetchRoasters = async () => ({
+      roasters: [{ code: 'example-roaster', title: 'Hello World' }],
+    });
 
     const { findByText } = render(<Roasters fetchRoasters={fetchRoasters} />);
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 interface Roaster {
+  code: string;
   title: string;
 }
 
@@ -12,7 +13,7 @@ export function RoasterList({ roasters }: { roasters: Roaster[] }) {
   return (
     <>
       {roasters.map((roaster) => (
-        <span>{roaster.title}</span>
+        <span key={roaster.code}>{roaster.title}</span>
       ))}
     </>
   );
