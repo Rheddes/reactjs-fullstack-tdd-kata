@@ -1,17 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 // import graphqlHTTP from 'express-graphql';
-import { buildSchema } from 'graphql';
+// import { buildSchema } from 'graphql';
 
-const schema = buildSchema(`
-  type Query {
-    roasters: String
-  },
-`);
-
-const root = {
-  roasters: async () => 'Hello World',
-};
+// const schema = buildSchema(`
+//   type Query {
+//     roasters: String
+//   },
+// `);
+//
+// const root = {
+//   roasters: async () => 'Hello World',
+// };
 
 const App = express();
 App.options('/graphql');
