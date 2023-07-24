@@ -34,7 +34,7 @@
       {
         "devDependencies": [
           "**/*.spec.{ts,tsx}",
-          "test/*.{ts,tsx}",
+          "test/**/*.{ts,tsx}",
           "webpack.config.*",
           "scripts/*.{ts,js}",
           "**/*.stories.*"
