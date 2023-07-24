@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from 'react';
 
 interface Roaster {
-	title: string;
+  title: string;
 }
 
 interface RoasterProps {
-	fetchRoasters: () => Promise<{ roasters: Roaster[] }>;
+  fetchRoasters: () => Promise<{ roasters: Roaster[] }>;
 }
 
 export function RoasterList({ roasters }: { roasters: Roaster[] }) {
-	return (
-		<>
-			{roasters.map((roaster) => (
-				<span>{roaster.title}</span>
-			))}
-		</>
-	);
+  return (
+    <>
+      {roasters.map((roaster) => (
+        <span>{roaster.title}</span>
+      ))}
+    </>
+  );
 }
 
 export default function Roasters({ fetchRoasters }: RoasterProps) {
-	const [currentRoasters, setRoasters] = useState<Roaster[]>([]);
+  const [currentRoasters, setRoasters] = useState<Roaster[]>([]);
 
-	useEffect(() => {
-		(async () => {
-			const { roasters } = await fetchRoasters();
-			setRoasters(roasters);
-		})();
-	}, []);
+  useEffect(() => {
+    (async () => {
+      const { roasters } = await fetchRoasters();
+      setRoasters(roasters);
+    })();
+  }, []);
 
-	return <RoasterList roasters={currentRoasters} />;
+  return <RoasterList roasters={currentRoasters} />;
 }

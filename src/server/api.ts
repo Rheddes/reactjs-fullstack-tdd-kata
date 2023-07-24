@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const { graphqlHTTP } = require('express-graphql');
-const { buildSchema } = require('graphql');
+import express from 'express';
+import cors from 'cors';
+// import graphqlHTTP from 'express-graphql';
+import { buildSchema } from 'graphql';
 
 const schema = buildSchema(`
   type Query {
@@ -10,22 +10,22 @@ const schema = buildSchema(`
 `);
 
 const root = {
-	roasters: async () => 'Hello World',
+  roasters: async () => 'Hello World',
 };
 
 const App = express();
 App.options('/graphql');
 App.use(cors());
-App.on('error', (err) => {
-	console.log(err);
-})
-	.use(
-		'/graphql',
-		graphqlHTTP({
-			schema,
-			rootValue: root,
-			graphiql: true,
-		})
-	);
+// App.on('error', (err) => {
+// 	// eslint-disable-next-line no-console
+// 	console.log(err);
+// }).use(
+// 	'/graphql',
+// 	graphqlHTTP({
+// 		schema,
+// 		rootValue: root,
+// 		graphiql: true,
+// 	})
+// );
 
-module.exports = App;
+export default App;

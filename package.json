@@ -4,7 +4,9 @@
   "main": "index.tsx",
   "scripts": {
     "start": "vite",
-    "test": "NODE_ENV=test JUNIT_REPORT_PATH=test-result.xml vitest run --coverage"
+    "test": "NODE_ENV=test JUNIT_REPORT_PATH=test-result.xml vitest run --coverage",
+    "lint": "eslint \"src/**/*.@(ts|tsx)\" --max-warnings 0",
+    "prettier:format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
