@@ -1,6 +1,6 @@
-# 🔴🟢🔵 reactjs-fullstack-tdd-kata
+# 🔴🟢🔵 TDD kata
 
-This kata was created by maker of **[WeDoTDD.com](https://WeDoTDD.com)**: lists companies, teams, software crafters, and coaches who TDD
+This kata was originally created by maker of **[WeDoTDD.com](https://WeDoTDD.com)**: lists companies, teams, software crafters, and coaches who TDD
 
 This kata is meant for **_anyone_** out there in the world who wants to try it.
 
@@ -20,109 +20,27 @@ The following is already setup for you: [mocha](https://mochajs.org), [chai](htt
 
 (Will be adding [enzyme](https://enzymejs.github.io/enzyme) examples soon)
 
-## Make this Kata what _you_ want
-
-You don't have to use what's out of the box here. This kata is setup initially with a few nice things such as a GraphQL service to serve data to the client.
-
-### Don't want GraphQL for server-side? No Problem!
-
-Well you forked it or created your own branch! So you're not stuck with GraphQL. It's easy enough to do what you want in here...then just do it! That's part of learning.
-
-**ExpressJS** is already installed, so TDD a REST service or whatever you want!
-
-Either way, you can still use the [supertest](https://github.com/visionmedia/supertest) library (already setup) to test drive the outside tests for the service!
-
-## Individuals working on this Kata
-
-**`Do not commit changes to main/master`. Instead:**
-
-1. If you do not have a github account, create one using your personal email
-2. Create a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to enable you to use as a password for github command-line (pushes, forks, etc)
-3. `Fork` this repo instead of cloning it, then work on your own fork.
-
-## Groups working on this Kata
-
-If you are a pair or mob working on this kata.
-
-**`Do not commit changes to main/master`. Instead:**
-
-- First DM Dave Schinkel in [WeDoTDD Slack](https://join.slack.com/t/wedotdd/shared_invite/zt-oh1gskuq-pNYBUOH4ySSdXyP9FfoP8g) OR [add an issue into this Repo](https://github.com/WeDoTDD/reactjs-fullstack-tdd-kata/issues) asking for access
-  - then, provide github handles of everyone who will be working on the kata from your group so that Dave can add your github accounts as collaborators to this repo
-    - This will allow your group to create your own feature branch to work off of
-- Create a `new branch` for your `team/group/mob/whatever` and name it what you like. **Then work off that branch together**
-
 # 🪛 Setup
 
-**TypeScript** is _not_ setup, this is a simple kata
-
-## 💻 Mac:
-
-- Install **Homebrew**
-  - run this cmd: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-- Install **NodeJS**: `brew install node`
-- Install **Yarn**: `brew install yarn`
-
-## 💻 Windows PC:
-
-- Install [**NodeJS**](https://nodejs.org/en/download/) first
-- Install **Yarn**
-  - `npm install --global yarn`
-
-## Finally:
-
-- Run `yarn` (install node modules)
-- **Next, be sure you can run the tests**: test scripts are in `package.json`, look there, try them
+`./strta/setup`
 
 # 🧪 Tests
 
-**The following frameworks and libs are already setup for you and ready to go**: [mocha](https://mochajs.org), [chai](https://www.chaijs.com), [jest](https://jestjs.io/), [supertest](https://github.com/visionmedia/supertest), [React Testing Library](https://testing-library.com), [isolate-components](https://www.npmjs.com/package/isolate-components)
+The tests have been configured to use Vitest in combination with React Testing Library.
 
 Looking at the config of these libs or frameworks will help you understand how to set these up for your own projects.
 
 Out-of-box test cases demonstrate the `Arrange` / `Act` / `Assert` test partitioning pattern
 
-## Client Tests
-
-- For React Component tests, you can use [React Testing Library](https://testing-library.com) or a newer, better lib called [isolate-react](https://www.npmjs.com/package/isolate-react) coupled with either [jest](https://jestjs.io/) or [mocha](https://mochajs.org)
-- For lower-level micro tests (below the components), you can use plain [mocha](https://mochajs.org) or [jest](https://jestjs.io)
-- these tests _**do not**_ rely on running the actual site (webpack)
-
-### 🧪ADDING _YOUR_ TESTS
-
-️ in this repo, `add your tests under the folder named with framework / lib you want to use`.
-
 ### Running
 
-Depending on what test libs, frameworks you chose that are already setup for you, you'd run one of the following:
-
-tests using **[isolate-react](https://www.npmjs.com/package/isolate-react)** + **[mocha](https://mochajs.org)** + **[chai](https://www.chaijs.com)**: `yarn test-isolateComponents-mocha`
-
-tests using **[isolate-react](https://www.npmjs.com/package/isolate-react)** + **[jest](https://jestjs.io)**: _coming soon_
-
-tests using **[React Testing Library](https://testing-library.com)** + **[jest](https://jestjs.io)**: `yarn test-rtl-jest`
-
-tests using **[React Testing Library](https://testing-library.com)** + **[mocha](https://mochajs.org)** + **[chai](https://www.chaijs.com)**: _comming soon_
-
-## Server Tests
-
-- Initial **server-side** spec for "Hello World" is directly testing the service contract (it is not running the GraphQL service, doesn't need to)
-  - Example server-side tests provided are isolated & headless; to run tests, _there is no need to run the real service or website_
-
-### Running
-
-`yarn test-server`
+`./strta/test`
 
 # 🏃🏻‍♀️ Run the Website (optional)
 
-You will need two separate terminal sessions running. One to run graphql and one to run the website.
+`./strta/server`
 
-### Perform the following steps:
-
-1. Run **_GraphQL Service_**: `yarn start-service`
-   - Don't forget about the `GraphiQL tool`: go to [http://localhost:4000/graphql](http://localhost:4000/graphql)
-2. Run **_front-end_**: `yarn start`, then go to [http://localhost:8080](http://localhost:8080)
-   - Note: uses [webpack dev server](https://webpack.js.org/configuration/dev-server)
-   - GraphQL Service ☝ (step 1)️ must be running
+The server should run on <https://localhost:4001>
 
 # ☕️ The Kata
 
@@ -151,12 +69,6 @@ You know however, **that for many reasons, it's better to go well, never rush**.
 ## 🖥 Requirements
 
 **Implement the [following features](#-coffee-roaster-features) below** using disciplined [Test Driven Development](http://wiki.c2.com/?TestDrivenDevelopment)
-
-**`Option #1`:** Front-end should call the backend to get the data
-
-**-OR-**
-
-**`Option #2`:** implement the front-end without a real backend first (use test data and [stubs](https://martinfowler.com/articles/mocksArentStubs.html) to provide data to the front-end
 
 ## 🖥 TDD Tips
 
@@ -211,18 +123,6 @@ Remember: **small** tests; and each feature should result in **several** small t
 #### Vids
 
 - [TDD TV](https://www.youtube.com/channel/UCiRBjSlxIlt5URzgHSGhHQA)
-
-#### Tools
-
-- [Mocha](https://mochajs.or)
-- [Chai](https://www.chaijs.com)
-- [Jest](https://jestjs.io)
-- [isolate-react](https://www.npmjs.com/package/isolate-react) - a newer, leaner, simpler, faster React testing lib
-- [React Testing Library](https://testing-library.com)
-- [Enzyme](https://enzymejs.github.io/enzyme)
-- [GraphQL](https://graphql.org)
-- [ExpressJS](https://expressjs.com)
-- [Koa](https://stackshare.io/koa): highly recommended over ExpressJS, written by [TJ Holowaychuk](https://github.com/tj), the guy who wrote ExpressJS. He wrote this to be an improvement over ExpressJS.
 
 #### Books
 
