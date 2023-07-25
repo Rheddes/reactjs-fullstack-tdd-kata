@@ -1,13 +1,12 @@
 /// <reference types="vitest" />
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react({ jsxRuntime: 'classic' })],
+  plugins: [react()],
   server: {
-    host: true,
+    host: '0.0.0.0',
     port: 4001,
     hmr: {
       host: 'localhost',
@@ -15,30 +14,10 @@ export default defineConfig({
       clientPort: 4001,
     },
   },
-  preview: {
-    host: true,
-    port: 4001,
-  },
   build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.tsx'),
-      name: 'reactjs-fullstack-tdd-kata',
-    },
-    rollupOptions: {
-      cache: false,
-      output: {
-        exports: 'named',
-      },
-    },
     outDir: './dist',
-    sourcemap: false,
   },
   test: {
-    // @TODO fix coverage
-    // coverage: {
-    //   provider: 'istanbul',
-    //   reporter: ['cobertura', 'html'],
-    // },
     globals: true,
     environment: 'jsdom',
     outputFile: process.env.JUNIT_REPORT_PATH,

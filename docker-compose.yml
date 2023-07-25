@@ -1,17 +1,27 @@
 version: '3.9'
 services:
-  npm:
+  npm: &npm
     image: node:18
     volumes:
       - .:/app
     working_dir: /app
     entrypoint: [npm]
-    command: [run, preview]
-    ports:
-      - '4001:4001'
     user: '${UID:-1000}:${GID:-1000}'
     environment:
       NPM_CONFIG_UPDATE_NOTIFIER: false
+
+  server:
+    <<: *npm
+    command: [run, server]
+    ports:
+      - '4000:4000'
+
+  client:
+    <<: *npm
+    command: [ run, client ]
+    ports:
+      - '4001:4001'
+
 
 volumes:
   no-agent:

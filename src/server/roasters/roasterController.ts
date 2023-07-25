@@ -1,6 +1,8 @@
 /* eslint-disable class-methods-use-this */
 export default class RoasterController {
   index() {
-    return { roasters: 'Hello World!' };
+    return {
+      roasters: [{ code: 'example', title: 'Hello World!' }],
+    };
   }
 }

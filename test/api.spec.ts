@@ -10,6 +10,6 @@ describe('Api', () => {
     const response = await request.get('/roasters');
 
     const { roasters } = response.body;
-    expect(roasters).to.equal('Hello World!');
+    expect(roasters).to.deep.equal([{ code: 'example', title: 'Hello World!' }]);
   });
 });

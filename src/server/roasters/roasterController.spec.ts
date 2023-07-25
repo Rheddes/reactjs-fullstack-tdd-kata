@@ -5,7 +5,7 @@ describe('roasterController', () => {
   describe('index', () => {
     it('Can get a list of coffee roasters', async () => {
       expect(new RoasterController().index()).to.deep.equal({
-        roasters: 'Hello World!',
+        roasters: [{ code: 'example', title: 'Hello World!' }],
       });
     });
   });
