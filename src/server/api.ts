@@ -1,31 +1,12 @@
-import express from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
-// import graphqlHTTP from 'express-graphql';
-// import { buildSchema } from 'graphql';
+import roasters from './roasters/router';
 
-// const schema = buildSchema(`
-//   type Query {
-//     roasters: String
-//   },
-// `);
-//
-// const root = {
-//   roasters: async () => 'Hello World',
-// };
+export default function createApp(): Express {
+  const app = express();
 
-const App = express();
-App.options('/graphql');
-App.use(cors());
-// App.on('error', (err) => {
-// 	// eslint-disable-next-line no-console
-// 	console.log(err);
-// }).use(
-// 	'/graphql',
-// 	graphqlHTTP({
-// 		schema,
-// 		rootValue: root,
-// 		graphiql: true,
-// 	})
-// );
-
-export default App;
+  app.use(cors());
+  app.use(express.json());
+  app.use('/roasters', roasters());
+  return app;
+}
