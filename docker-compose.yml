@@ -10,6 +10,8 @@ services:
     ports:
       - '4001:4001'
     user: '${UID:-1000}:${GID:-1000}'
+    environment:
+      NPM_CONFIG_UPDATE_NOTIFIER: false
 
 volumes:
   no-agent:
